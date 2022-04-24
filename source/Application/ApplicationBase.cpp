@@ -14,9 +14,6 @@ namespace {
   constexpr int Error = -1;  //!< エラー
 } // namespace
 
-/**
- * @brief  アプリケーションフレーム
- */
 namespace AppFrame {
   namespace Application {
     ApplicationBase::ApplicationBase() {

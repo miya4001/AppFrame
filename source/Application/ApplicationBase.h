@@ -8,9 +8,9 @@
 #pragma once
 #include <memory>
 
- /**
-  * @brief  アプリケーションフレーム
-  */
+/**
+ * @brief  アプリケーションフレーム
+ */
 namespace AppFrame {
   constexpr int ScreenWidth = 1920;   //!< 画面解像度(横)
   constexpr int ScreenHeight = 1080;  //!< 画面解像度(縦)
