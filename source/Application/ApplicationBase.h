@@ -17,6 +17,12 @@ namespace AppFrame {
   constexpr int ColorBit = 32;        //!< ビットカラー
   constexpr int Particle = 8000;      //!< パーティクル数
   /**
+   * @brief  入力
+   */
+  namespace Input {
+    class InputManager;
+  } // namespace Input
+  /**
    * @brief  アプリケーション
    */
   namespace Application {
@@ -67,6 +73,11 @@ namespace AppFrame {
       static std::shared_ptr<ApplicationBase> GetApplication() {
         return _application;
       }
+      /**
+       * @brief  インプットマネージャーの取得
+       * @return インプットマネージャーの参照
+       */
+      Input::InputManager& GetInputManager();
 
     protected:
       /**
@@ -107,6 +118,8 @@ namespace AppFrame {
       AppState _appState{ AppState::Paused };
       //!< アプリケーションの実態
       static inline std::shared_ptr<ApplicationBase> _application{ nullptr };
+      //!< インプットマネージャー
+      std::unique_ptr<Input::InputManager> _input{ nullptr };
     };
   } // namespace Application
 } // namespace AppFrame

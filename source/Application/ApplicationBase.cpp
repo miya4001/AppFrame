@@ -9,6 +9,7 @@
 #include <DxLib.h>
 #include <EffekseerForDXLib.h>
 #include <stdexcept>
+#include "../Input/InputManager.h"
 
 namespace {
   constexpr int Error = -1;  //!< エラー
@@ -38,6 +39,8 @@ namespace AppFrame {
       if (!EffekseerInit()) {
         return false;  // 初期化失敗
       }
+      // インプットマネージャーの生成
+      _input = std::make_unique<Input::InputManager>(*this);
       return true;  // 初期化成功
     }
 
@@ -81,7 +84,8 @@ namespace AppFrame {
     }
 
     void ApplicationBase::Input() {
-
+      // 入力状態の更新
+      _input->Process();
     }
 
     void ApplicationBase::Process() {
@@ -144,6 +148,10 @@ namespace AppFrame {
         }
       }
       return false;  // 生成しない
+    }
+
+    Input::InputManager& ApplicationBase::GetInputManager() {
+      return *_input;
     }
   } // namespace Application
 } // namespace AppFrame
