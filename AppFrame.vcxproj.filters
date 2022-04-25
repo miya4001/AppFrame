@@ -25,6 +25,12 @@
     <Filter Include="ソース ファイル\Input">
       <UniqueIdentifier>{bee3d6ce-3493-4d13-9447-24a9ff54642d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Mode">
+      <UniqueIdentifier>{f9c6a026-f927-47ad-a5dc-f4f5d2d52469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Mode">
+      <UniqueIdentifier>{36d45b29-5814-4eb2-a4f9-adda7e245191}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -39,6 +45,9 @@
     <ClCompile Include="source\Input\InputXJoypad.cpp">
       <Filter>ソース ファイル\Input</Filter>
     </ClCompile>
+    <ClCompile Include="source\Mode\ModeBase.cpp">
+      <Filter>ソース ファイル\Mode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -52,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="source\Input\InputManager.h">
       <Filter>ヘッダー ファイル\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mode\ModeBase.h">
+      <Filter>ヘッダー ファイル\Mode</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
