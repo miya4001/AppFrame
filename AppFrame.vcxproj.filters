@@ -48,6 +48,9 @@
     <ClCompile Include="source\Mode\ModeBase.cpp">
       <Filter>ソース ファイル\Mode</Filter>
     </ClCompile>
+    <ClCompile Include="source\Mode\ModeServer.cpp">
+      <Filter>ソース ファイル\Mode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -63,6 +66,9 @@
       <Filter>ヘッダー ファイル\Input</Filter>
     </ClInclude>
     <ClInclude Include="source\Mode\ModeBase.h">
+      <Filter>ヘッダー ファイル\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mode\ModeServer.h">
       <Filter>ヘッダー ファイル\Mode</Filter>
     </ClInclude>
   </ItemGroup>

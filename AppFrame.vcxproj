@@ -167,6 +167,7 @@
     <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Input\InputXJoypad.cpp" />
     <ClCompile Include="source\Mode\ModeBase.cpp" />
+    <ClCompile Include="source\Mode\ModeServer.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="source\Input\InputManager.h" />
     <ClInclude Include="source\Input\InputXJoypad.h" />
     <ClInclude Include="source\Mode\ModeBase.h" />
+    <ClInclude Include="source\Mode\ModeServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
