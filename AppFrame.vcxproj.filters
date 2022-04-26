@@ -60,6 +60,12 @@
     <ClCompile Include="source\Mode\Fade\ModeFadeBase.cpp">
       <Filter>ソース ファイル\Mode\Fade</Filter>
     </ClCompile>
+    <ClCompile Include="source\Mode\Fade\ModeFadeIn.cpp">
+      <Filter>ソース ファイル\Mode\Fade</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Mode\Fade\ModeFadeOut.cpp">
+      <Filter>ソース ファイル\Mode\Fade</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -81,6 +87,12 @@
       <Filter>ヘッダー ファイル\Mode</Filter>
     </ClInclude>
     <ClInclude Include="source\Mode\Fade\ModeFadeBase.h">
+      <Filter>ヘッダー ファイル\Mode\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mode\Fade\ModeFadeIn.h">
+      <Filter>ヘッダー ファイル\Mode\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mode\Fade\ModeFadeOut.h">
       <Filter>ヘッダー ファイル\Mode\Fade</Filter>
     </ClInclude>
   </ItemGroup>

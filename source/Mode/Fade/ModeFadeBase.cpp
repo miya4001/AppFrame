@@ -17,10 +17,6 @@ namespace AppFrame {
 
       }
 
-      ModeFadeBase::~ModeFadeBase() {
-
-      }
-
       bool ModeFadeBase::Init() {
         return true;
       }
@@ -30,6 +26,8 @@ namespace AppFrame {
       }
 
       void ModeFadeBase::Process() {
+        // アルファ値の計算
+        AlphaCalculation();
         // フェードの終了判定
         if (IsFadeFinish()) {
           // 自身を削除する
@@ -39,11 +37,15 @@ namespace AppFrame {
 
       void ModeFadeBase::Draw() const {
         // アルファブレンドモード
-        SetDrawBlendMode(DX_BLENDMODE_ALPHA, _alpha);
+        SetDrawBlendMode(DX_BLENDMODE_ALPHA, static_cast<int>(_alpha));
         //フェードボックスの描画
         DrawBox(0, 0, ScreenWidth, ScreenHeight, GetColor(0, 0, 0), true);
         //ノーマルブレンドモード
         SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+      }
+
+      void ModeFadeBase::AlphaCalculation() {
+
       }
 
       bool ModeFadeBase::IsFadeFinish() {

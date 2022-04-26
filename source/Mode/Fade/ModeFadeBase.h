@@ -20,8 +20,12 @@ namespace AppFrame {
      * @brief  フェード
      */
     namespace Fade {
+      constexpr float AlphaMax = 255.0f;  //!< アルファ値の上限
+      constexpr float AlphaMin = 0.0f;    //!< アルファ値の下限
+      constexpr float FadeTime = 60.0f;   //!< フェード時間(フレーム)
+      constexpr float AlphaSpeed = (AlphaMax / FadeTime);  //!< アルファ値の変化量
       /**
-       * @class  ModeFade
+       * @class  ModeFadeBase
        * @brief  モード遷移フェードの基底クラス
        */
       class ModeFadeBase : public ModeBase {
@@ -31,10 +35,6 @@ namespace AppFrame {
          * @param  app アプリケーションの参照
          */
         ModeFadeBase(Application::ApplicationBase& app);
-        /**
-         * @brief  デストラクタ
-         */
-        ~ModeFadeBase() override;
         /**
          * @brief  初期化
          * @return true:初期化成功
@@ -48,13 +48,17 @@ namespace AppFrame {
         /**
          * @brief  更新
          */
-        virtual void Process() override;
+        void Process() override;
         /**
          * @brief  描画
          */
-        virtual void Draw() const override;
+        void Draw() const override;
 
       protected:
+        /**
+         * @brief  アルファ値の計算
+         */
+        virtual void AlphaCalculation();
         /**
          * @brief  フェードの終了判定
          * @return true:フェード終了
@@ -62,7 +66,7 @@ namespace AppFrame {
          */
         virtual bool IsFadeFinish();
 
-        int _alpha{ 0 };  //!< アルファ値
+        float _alpha{ 0 };  //!< アルファ値
       };
     } // namespace Fade
   } // namespace Mode

@@ -167,6 +167,8 @@
     <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Input\InputXJoypad.cpp" />
     <ClCompile Include="source\Mode\Fade\ModeFadeBase.cpp" />
+    <ClCompile Include="source\Mode\Fade\ModeFadeIn.cpp" />
+    <ClCompile Include="source\Mode\Fade\ModeFadeOut.cpp" />
     <ClCompile Include="source\Mode\ModeBase.cpp" />
     <ClCompile Include="source\Mode\ModeServer.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
@@ -177,6 +179,8 @@
     <ClInclude Include="source\Input\InputManager.h" />
     <ClInclude Include="source\Input\InputXJoypad.h" />
     <ClInclude Include="source\Mode\Fade\ModeFadeBase.h" />
+    <ClInclude Include="source\Mode\Fade\ModeFadeIn.h" />
+    <ClInclude Include="source\Mode\Fade\ModeFadeOut.h" />
     <ClInclude Include="source\Mode\ModeBase.h" />
     <ClInclude Include="source\Mode\ModeServer.h" />
   </ItemGroup>
