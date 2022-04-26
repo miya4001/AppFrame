@@ -10,6 +10,7 @@
 #include <EffekseerForDXLib.h>
 #include <stdexcept>
 #include "../Input/InputManager.h"
+#include "../Mode/ModeServer.h"
 
 namespace {
   constexpr int Error = -1;  //!< エラー
@@ -41,6 +42,8 @@ namespace AppFrame {
       }
       // インプットマネージャーの生成
       _input = std::make_unique<Input::InputManager>(*this);
+      // モードサーバーの生成
+      _modeServer = std::make_unique<Mode::ModeServer>(*this);
       return true;  // 初期化成功
     }
 
@@ -89,12 +92,15 @@ namespace AppFrame {
     }
 
     void ApplicationBase::Process() {
-
+      // モードサーバーの更新
+      _modeServer->Process();
     }
 
     void ApplicationBase::Draw() {
       // 画面をクリア
       ClearDrawScreen();
+      // モードサーバーの描画
+      _modeServer->Draw();
       // 裏画面の内容を表画面に反映
       ScreenFlip();
     }

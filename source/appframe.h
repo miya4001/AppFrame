@@ -9,3 +9,7 @@
 #pragma comment(lib, "AppFrame.lib")
 
 #include "Application/ApplicationBase.h"
+#include "Input/InputManager.h"
+#include "Input/InputXJoypad.h"
+#include "Mode/ModeBase.h"
+#include "Mode/ModeServer.h"
