@@ -139,7 +139,7 @@ namespace AppFrame {
         return false;  // 初期化失敗
       }
       // フルスクリーンウインドウの切り替えでリソースが消えるのを防ぐ
-      SetChangeScreenModeGraphicsSystemResetFlag(FALSE);
+      SetChangeScreenModeGraphicsSystemResetFlag(false);
       // DXライブラリのデバイスロストした時のコールバックを設定
       Effekseer_SetGraphicsDeviceLostCallbackFunctions();
       return true;  // 初期化成功
@@ -158,6 +158,10 @@ namespace AppFrame {
 
     Input::InputManager& ApplicationBase::GetInputManager() {
       return *_input;
+    }
+
+    Mode::ModeServer& ApplicationBase::GetModeServer() {
+      return *_modeServer;
     }
   } // namespace Application
 } // namespace AppFrame

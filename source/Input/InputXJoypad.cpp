@@ -56,8 +56,7 @@ namespace AppFrame {
       if (type == InputPress) {
         // 押下情報を返す
         return _press.Buttons[key];
-      }
-      else {
+      } else {
         // トリガ情報を返す
         return _triggerButtons[key];
       }
@@ -81,8 +80,7 @@ namespace AppFrame {
         x = static_cast<int>(_press.ThumbLX);
         y = static_cast<int>(_press.ThumbLY);
         return std::make_pair(x, y);
-      }
-      else {
+      } else {
         // 右スティックの入力状態
         x = static_cast<int>(_press.ThumbRX);
         y = static_cast<int>(_press.ThumbRY);
@@ -114,8 +112,7 @@ namespace AppFrame {
         // クランプ処理
         stick = std::clamp(stick, min, max);
         return;
-      }
-      else {
+      } else {
         // 下限よりも大きい場合0とする
         if (min < stick) {
           stick = 0;
