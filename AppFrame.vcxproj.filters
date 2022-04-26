@@ -31,6 +31,12 @@
     <Filter Include="ソース ファイル\Mode">
       <UniqueIdentifier>{36d45b29-5814-4eb2-a4f9-adda7e245191}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Mode\Fade">
+      <UniqueIdentifier>{547333c3-0b6b-42f3-af61-90de4face6d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Mode\Fade">
+      <UniqueIdentifier>{03df9ba5-2c34-4bb2-91cf-c245b096b35e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -51,6 +57,9 @@
     <ClCompile Include="source\Mode\ModeServer.cpp">
       <Filter>ソース ファイル\Mode</Filter>
     </ClCompile>
+    <ClCompile Include="source\Mode\Fade\ModeFadeBase.cpp">
+      <Filter>ソース ファイル\Mode\Fade</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -70,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="source\Mode\ModeServer.h">
       <Filter>ヘッダー ファイル\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mode\Fade\ModeFadeBase.h">
+      <Filter>ヘッダー ファイル\Mode\Fade</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
