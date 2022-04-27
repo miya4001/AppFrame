@@ -26,7 +26,7 @@ namespace AppFrame {
       // フェードインの登録
       AddMode(FadeIn, std::make_shared<Fade::ModeFadeIn>(app));
       // フェードアウトの登録
-      AddMode(FadeIn, std::make_shared<Fade::ModeFadeOut>(app));
+      AddMode(FadeOut, std::make_shared<Fade::ModeFadeOut>(app));
     }
 
     ModeServer::~ModeServer() {
@@ -51,7 +51,7 @@ namespace AppFrame {
 
     void ModeServer::AddMode(std::string_view key, std::shared_ptr<ModeBase> mode) {
       // キーが登録済みの場合
-      if (_modeRegistry.contains(key.data())) {
+      if (ContainsMode(key)) {
         // 重複している対象を削除
         _modeRegistry.erase(key.data());
       }
@@ -91,6 +91,10 @@ namespace AppFrame {
       PushBack(key);
       PushBack(FadeIn);
       PushBack(FadeOut);
+    }
+
+    bool ModeServer::ContainsMode(std::string_view key) {
+      return _modeRegistry.contains(key.data());
     }
 
     std::shared_ptr<ModeBase> ModeServer::FetchMode(std::string_view key, const bool enter) {

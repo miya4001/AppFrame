@@ -73,6 +73,13 @@ namespace AppFrame {
        * @param  key ‘ÎÛƒ‚[ƒh‚É•R‚Ã‚¯‚ç‚ê‚½•¶š—ñ
        */
       void TransionToMode(std::string_view key);
+      /**
+       * @brief  ƒ‚[ƒh“o˜^”»’è
+       * @param  key ‘ÎÛƒ‚[ƒh‚É•R‚Ã‚¯‚ç‚ê‚½•¶š—ñ
+       * @return true:“o˜^Ï‚İ
+       *         false:–¢“o˜^
+       */
+      bool ContainsMode(std::string_view key);
 
     private:
       /**
