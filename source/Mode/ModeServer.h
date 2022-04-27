@@ -83,6 +83,11 @@ namespace AppFrame {
 
     private:
       /**
+       * @brief  指定したモードをリストの末尾の直前に追加
+       * @param  key 対象モードに紐づけられた文字列
+       */
+      void InsertBeforeBack(std::string_view key);
+      /**
        * @brief  データベースから指定したモードを取得
        * @param  key 対象モードに紐づけられた文字列
        * @param  enter モード開始処理を行うか判定

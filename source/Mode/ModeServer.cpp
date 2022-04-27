@@ -87,14 +87,36 @@ namespace AppFrame {
     }
 
     void ModeServer::TransionToMode(std::string_view key) {
-      // 順番に追加
-      PushBack(key);
-      PushBack(FadeIn);
-      PushBack(FadeOut);
+      // モードを順番に追加
+      InsertBeforeBack(key);
+      InsertBeforeBack(FadeIn);
+      InsertBeforeBack(FadeOut);
+      // 末尾のモードを削除
+      PopBuck();
     }
 
     bool ModeServer::ContainsMode(std::string_view key) {
       return _modeRegistry.contains(key.data());
+    }
+
+    void ModeServer::InsertBeforeBack(std::string_view key) {
+      // モードの取得
+      auto mode = FetchMode(key);
+      // モードの取得に失敗した場合エラー
+      if (mode == nullptr) {
+#ifdef _DEBUG
+        throw std::logic_error("ModeServer:モードの取得に失敗しました\n");
+#endif
+        return;  // キーが不正
+      }
+      // リストが空の場合
+      if (_modeList.empty()) {
+        // リストの末尾に追加
+        _modeList.push_back(mode);
+        return;
+      }
+      // リストの末尾の直前に追加
+      _modeList.insert(std::prev(_modeList.end()), mode);
     }
 
     std::shared_ptr<ModeBase> ModeServer::FetchMode(std::string_view key, const bool enter) {
