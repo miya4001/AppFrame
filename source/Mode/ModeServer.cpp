@@ -90,9 +90,7 @@ namespace AppFrame {
       // モードを順番に追加
       InsertBeforeBack(key);
       InsertBeforeBack(FadeIn);
-      InsertBeforeBack(FadeOut);
-      // 末尾のモードを削除
-      PopBuck();
+      PushBack(FadeOut);
     }
 
     bool ModeServer::ContainsMode(std::string_view key) {

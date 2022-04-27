@@ -48,7 +48,7 @@ namespace AppFrame {
         /**
          * @brief  çXêV
          */
-        void Process() override;
+        virtual void Process() override;
         /**
          * @brief  ï`âÊ
          */

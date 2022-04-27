@@ -35,6 +35,10 @@ namespace AppFrame {
          * @brief  モード開始
          */
         void Enter() override;
+        /**
+         * @brief  更新
+         */
+        void Process() override;
 
       private:
         /**
