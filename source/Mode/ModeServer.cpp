@@ -8,6 +8,13 @@
 #include "ModeServer.h"
 #include <stdexcept>
 #include "ModeBase.h"
+#include "Fade/ModeFadeIn.h"
+#include "Fade/ModeFadeOut.h"
+
+namespace {
+  constexpr auto FadeIn = "FadeIn";    //!< フェードイン登録用キー
+  constexpr auto FadeOut = "FadeOut";  //!< フェードアウト登録用キー
+} // namespace
 
 namespace AppFrame {
   namespace Mode {
@@ -16,6 +23,10 @@ namespace AppFrame {
       _modeRegistry.clear();
       // リストの初期化
       _modeList.clear();
+      // フェードインの登録
+      AddMode(FadeIn, std::make_shared<Fade::ModeFadeIn>(app));
+      // フェードアウトの登録
+      AddMode(FadeIn, std::make_shared<Fade::ModeFadeOut>(app));
     }
 
     ModeServer::~ModeServer() {
@@ -76,7 +87,10 @@ namespace AppFrame {
     }
 
     void ModeServer::TransionToMode(std::string_view key) {
-
+      // 順番に追加
+      PushBack(key);
+      PushBack(FadeIn);
+      PushBack(FadeOut);
     }
 
     std::shared_ptr<ModeBase> ModeServer::FetchMode(std::string_view key, const bool enter) {
