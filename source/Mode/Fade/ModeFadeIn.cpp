@@ -24,7 +24,7 @@ namespace AppFrame {
         _alpha -= AlphaSpeed;
       }
 
-      bool ModeFadeIn::IsFadeFinish() {
+      bool ModeFadeIn::IsFadeFinish() const {
         // アルファ値は下限以下か
         return _alpha <= AlphaMin;
       }

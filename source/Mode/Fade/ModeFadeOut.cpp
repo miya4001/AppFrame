@@ -38,7 +38,7 @@ namespace AppFrame {
         _alpha += AlphaSpeed;
       }
 
-      bool ModeFadeOut::IsFadeFinish() {
+      bool ModeFadeOut::IsFadeFinish() const {
         // アルファ値は上限以上か
         return AlphaMax <= _alpha;
       }

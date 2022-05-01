@@ -64,7 +64,7 @@ namespace AppFrame {
          * @return true:フェード終了
          *         false:フェード継続
          */
-        virtual bool IsFadeFinish();
+        virtual bool IsFadeFinish() const;
 
         float _alpha{ 0 };  //!< アルファ値
       };

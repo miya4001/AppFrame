@@ -48,7 +48,7 @@ namespace AppFrame {
 
       }
 
-      bool ModeFadeBase::IsFadeFinish() {
+      bool ModeFadeBase::IsFadeFinish() const {
         return true;
       }
     } // namespace Fade

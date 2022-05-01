@@ -50,7 +50,7 @@ namespace AppFrame {
          * @return true:フェード終了
          *         false:フェード継続
          */
-        bool IsFadeFinish() override;
+        bool IsFadeFinish() const override;
       };
     } // namespace Fade
   } // namespace Mode

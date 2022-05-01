@@ -33,6 +33,17 @@ namespace AppFrame {
 
     }
 
+    void ModeServer::Release() {
+      // リスト内のモードの終了
+      for (auto&& mode : _modeList) {
+        mode->Exit();
+      }
+      // データベースの解放
+      _modeRegistry.clear();
+      // リストの解放
+      _modeList.clear();
+    }
+
     void ModeServer::Process() {
       // リストが空の場合中断
       if (_modeList.empty()) {
@@ -49,7 +60,7 @@ namespace AppFrame {
       }
     }
 
-    void ModeServer::AddMode(std::string_view key, std::shared_ptr<ModeBase> mode) {
+    void ModeServer::AddMode(const std::string_view key, const std::shared_ptr<ModeBase> mode) {
       // キーが登録済みの場合
       if (ContainsMode(key)) {
         // 重複している対象を削除
@@ -61,7 +72,7 @@ namespace AppFrame {
       _modeRegistry.emplace(key.data(), mode);
     }
 
-    void ModeServer::PushBack(std::string_view key) {
+    void ModeServer::PushBack(const std::string_view key) {
       // モードの取得
       auto mode = FetchMode(key);
       // モードの取得に失敗した場合エラー
@@ -86,18 +97,18 @@ namespace AppFrame {
       _modeList.pop_back();
     }
 
-    void ModeServer::TransionToMode(std::string_view key) {
+    void ModeServer::TransionToMode(const std::string_view key) {
       // モードを順番に追加
       InsertBeforeBack(key);
       InsertBeforeBack(FadeIn);
       PushBack(FadeOut);
     }
 
-    bool ModeServer::ContainsMode(std::string_view key) {
+    bool ModeServer::ContainsMode(const std::string_view key) {
       return _modeRegistry.contains(key.data());
     }
 
-    void ModeServer::InsertBeforeBack(std::string_view key) {
+    void ModeServer::InsertBeforeBack(const std::string_view key) {
       // モードの取得
       auto mode = FetchMode(key);
       // モードの取得に失敗した場合エラー
@@ -117,7 +128,7 @@ namespace AppFrame {
       _modeList.insert(std::prev(_modeList.end()), mode);
     }
 
-    std::shared_ptr<ModeBase> ModeServer::FetchMode(std::string_view key, const bool enter) {
+    std::shared_ptr<ModeBase> ModeServer::FetchMode(const std::string_view key, const bool enter) {
       // キーが未登録の場合nullptr
       if (!_modeRegistry.contains(key.data())) {
         return nullptr;

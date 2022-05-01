@@ -46,24 +46,28 @@ namespace AppFrame {
        */
       ~ModeServer();
       /**
+       * @brief  解放
+       */
+      void Release();
+      /**
        * @brief  更新
        */
-      virtual void Process();
+      void Process();
       /**
        * @brief  描画
        */
-      virtual void Draw() const;
+      void Draw() const;
       /**
        * @brief  データベースにモードを登録
        * @param  key 登録に使用する文字列
        * @param  mode 登録するモードのシェアードポインタ
        */
-      void AddMode(std::string_view key, std::shared_ptr<ModeBase> mode);
+      void AddMode(const std::string_view key, const std::shared_ptr<ModeBase> mode);
       /**
        * @brief  指定したモードをリストの末尾に追加
        * @param  key 対象モードに紐づけられた文字列
        */
-      void PushBack(std::string_view key);
+      void PushBack(const std::string_view key);
       /**
        * @brief  リストの末尾に登録されているモードを削除
        */
@@ -72,21 +76,21 @@ namespace AppFrame {
        * @brief  モード遷移
        * @param  key 対象モードに紐づけられた文字列
        */
-      void TransionToMode(std::string_view key);
+      void TransionToMode(const std::string_view key);
       /**
        * @brief  モード登録判定
        * @param  key 対象モードに紐づけられた文字列
        * @return true:登録済み
        *         false:未登録
        */
-      bool ContainsMode(std::string_view key);
+      bool ContainsMode(const std::string_view key);
 
     private:
       /**
        * @brief  指定したモードをリストの末尾の直前に追加
        * @param  key 対象モードに紐づけられた文字列
        */
-      void InsertBeforeBack(std::string_view key);
+      void InsertBeforeBack(const std::string_view key);
       /**
        * @brief  データベースから指定したモードを取得
        * @param  key 対象モードに紐づけられた文字列
@@ -94,7 +98,7 @@ namespace AppFrame {
        * @return 指定したモードを返す
        *         キーが有効でない場合nullptrを返す
        */
-      std::shared_ptr<ModeBase> FetchMode(std::string_view key, const bool enter = true);
+      std::shared_ptr<ModeBase> FetchMode(const std::string_view key, const bool enter = true);
 
       //!< モードデータベース(登録用)
       std::unordered_map<std::string, std::shared_ptr<ModeBase>> _modeRegistry;
