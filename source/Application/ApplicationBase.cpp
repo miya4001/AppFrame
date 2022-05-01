@@ -10,6 +10,7 @@
 #include <EffekseerForDXLib.h>
 #include <stdexcept>
 #include "../Input/InputManager.h"
+#include "../Graphic/GraphicLoadServer.h"
 #include "../Mode/ModeServer.h"
 
 namespace {
@@ -42,6 +43,8 @@ namespace AppFrame {
       }
       // インプットマネージャーの生成
       _inputManager = std::make_unique<Input::InputManager>(*this);
+      // 画像読み込みサーバの生成
+      _graphicLoadServer = std::make_unique<Graphic::GraphicLoadServer>();
       // モードサーバの生成
       _modeServer = std::make_unique<Mode::ModeServer>(*this);
       return true;  // 初期化成功
@@ -89,6 +92,8 @@ namespace AppFrame {
     }
 
     void ApplicationBase::Release() {
+      // 画像読み込みサーバの解放
+      _graphicLoadServer->Release();
       // モードサーバの解放
       _modeServer->Release();
     }

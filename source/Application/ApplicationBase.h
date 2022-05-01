@@ -23,6 +23,12 @@ namespace AppFrame {
     class InputManager;
   } // namespace Input
   /**
+   * @brief  画像
+   */
+  namespace Graphic {
+    class GraphicLoadServer;
+  } // namespace Graphic
+  /**
    * @brief  モード
    */
   namespace Mode {
@@ -85,8 +91,13 @@ namespace AppFrame {
        */
       Input::InputManager& GetInputManager();
       /**
-       * @brief  モードサーバーの取得
-       * @return モードサーバーの参照
+       * @brief  画像読み込みサーバの取得
+       * @return 画像読み込みサーバの取得
+       */
+      Graphic::GraphicLoadServer& GetGraphicLoadServer();
+      /**
+       * @brief  モードサーバの取得
+       * @return モードサーバの参照
        */
       Mode::ModeServer& GetModeServer();
 
@@ -135,6 +146,8 @@ namespace AppFrame {
       static inline std::shared_ptr<ApplicationBase> _application{ nullptr };
       //!< インプットマネージャー
       std::unique_ptr<Input::InputManager> _inputManager{ nullptr };
+      //!< 画像読み込みサーバ
+      std::unique_ptr<Graphic::GraphicLoadServer> _graphicLoadServer{ nullptr };
       //!< モードサーバ
       std::unique_ptr<Mode::ModeServer> _modeServer{ nullptr };
     };
