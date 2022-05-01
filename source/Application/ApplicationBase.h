@@ -92,6 +92,10 @@ namespace AppFrame {
 
     protected:
       /**
+       * @brief  解放
+       */
+      virtual void Release();
+      /**
        * @brief  入力
        */
       virtual void Input();
@@ -130,8 +134,8 @@ namespace AppFrame {
       //!< アプリケーションの実態
       static inline std::shared_ptr<ApplicationBase> _application{ nullptr };
       //!< インプットマネージャー
-      std::unique_ptr<Input::InputManager> _input{ nullptr };
-      //!< モードサーバー
+      std::unique_ptr<Input::InputManager> _inputManager{ nullptr };
+      //!< モードサーバ
       std::unique_ptr<Mode::ModeServer> _modeServer{ nullptr };
     };
   } // namespace Application

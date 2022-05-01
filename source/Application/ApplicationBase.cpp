@@ -41,8 +41,8 @@ namespace AppFrame {
         return false;  // 初期化失敗
       }
       // インプットマネージャーの生成
-      _input = std::make_unique<Input::InputManager>(*this);
-      // モードサーバーの生成
+      _inputManager = std::make_unique<Input::InputManager>(*this);
+      // モードサーバの生成
       _modeServer = std::make_unique<Mode::ModeServer>(*this);
       return true;  // 初期化成功
     }
@@ -73,6 +73,8 @@ namespace AppFrame {
     }
 
     void ApplicationBase::Terminate() {
+      // 各種解放
+      Release();
       // Effekseerの終了
       Effkseer_End();
       // DXライブラリの終了
@@ -86,20 +88,25 @@ namespace AppFrame {
       }
     }
 
+    void ApplicationBase::Release() {
+      // モードサーバの解放
+      _modeServer->Release();
+    }
+
     void ApplicationBase::Input() {
-      // 入力状態の更新
-      _input->Process();
+      // インプットマネージャーの更新
+      _inputManager->Process();
     }
 
     void ApplicationBase::Process() {
-      // モードサーバーの更新
+      // モードサーバの更新
       _modeServer->Process();
     }
 
     void ApplicationBase::Draw() {
       // 画面をクリア
       ClearDrawScreen();
-      // モードサーバーの描画
+      // モードサーバの描画
       _modeServer->Draw();
       // 裏画面の内容を表画面に反映
       ScreenFlip();
@@ -157,7 +164,7 @@ namespace AppFrame {
     }
 
     Input::InputManager& ApplicationBase::GetInputManager() {
-      return *_input;
+      return *_inputManager;
     }
 
     Mode::ModeServer& ApplicationBase::GetModeServer() {
