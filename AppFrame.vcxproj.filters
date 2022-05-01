@@ -37,6 +37,12 @@
     <Filter Include="ソース ファイル\Mode\Fade">
       <UniqueIdentifier>{03df9ba5-2c34-4bb2-91cf-c245b096b35e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Graphic">
+      <UniqueIdentifier>{8cb14496-1a1a-4249-b957-8774f3a27d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic">
+      <UniqueIdentifier>{ffd0bf77-d3a2-4546-b277-0c4a6de0a669}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -66,6 +72,9 @@
     <ClCompile Include="source\Mode\Fade\ModeFadeOut.cpp">
       <Filter>ソース ファイル\Mode\Fade</Filter>
     </ClCompile>
+    <ClCompile Include="source\Graphic\GraphicLoadServer.cpp">
+      <Filter>ソース ファイル\Graphic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -94,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="source\Mode\Fade\ModeFadeOut.h">
       <Filter>ヘッダー ファイル\Mode\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Graphic\GraphicLoadServer.h">
+      <Filter>ヘッダー ファイル\Graphic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
