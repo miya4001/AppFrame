@@ -44,7 +44,7 @@ namespace AppFrame {
 
     int GraphicLoadServer::GetGraphicHandle(const std::string_view key) const {
       // キーが有効でない場合-1
-      if (_graphicRegistry.contains(key.data())) {
+      if (!_graphicRegistry.contains(key.data())) {
         return -1;
       }
       // 画像ハンドルを返す
