@@ -139,7 +139,6 @@ namespace AppFrame {
 
       static inline bool _windowMode{ false };  //!< 画面モード
       static inline bool _isSetApp{ false };    //!< 生成フラグ
-
       //!< アプリケーションの状態
       AppState _appState{ AppState::Paused };
       //!< アプリケーションの実態

@@ -37,6 +37,7 @@ namespace AppFrame {
     void GraphicLoadServer::LoadGraphics(const LoadGraphicMap graphic) {
       // コンテナからデータの読み込み
       for (auto [key, path] : graphic) {
+        // 画像の読み込み
         LoadGraphic(key, path);
       }
     }

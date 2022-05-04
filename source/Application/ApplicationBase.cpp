@@ -172,6 +172,10 @@ namespace AppFrame {
       return *_inputManager;
     }
 
+    Graphic::GraphicLoadServer& ApplicationBase::GetGraphicLoadServer() {
+      return *_graphicLoadServer;
+    }
+
     Mode::ModeServer& ApplicationBase::GetModeServer() {
       return *_modeServer;
     }
