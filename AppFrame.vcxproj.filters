@@ -43,6 +43,12 @@
     <Filter Include="ソース ファイル\Graphic">
       <UniqueIdentifier>{ffd0bf77-d3a2-4546-b277-0c4a6de0a669}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Model">
+      <UniqueIdentifier>{25126896-3946-4a67-8ebb-c97a9244e085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Model">
+      <UniqueIdentifier>{6540050e-f89b-4fa4-bd3c-8d0f5225b783}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -75,6 +81,9 @@
     <ClCompile Include="source\Graphic\GraphicLoadServer.cpp">
       <Filter>ソース ファイル\Graphic</Filter>
     </ClCompile>
+    <ClCompile Include="source\Model\ModelLoadServer.cpp">
+      <Filter>ソース ファイル\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -106,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="source\Graphic\GraphicLoadServer.h">
       <Filter>ヘッダー ファイル\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Model\ModelLoadServer.h">
+      <Filter>ヘッダー ファイル\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
