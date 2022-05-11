@@ -76,6 +76,15 @@ namespace AppFrame {
       virtual Application::ApplicationBase& GetApplication();
 
     protected:
+      /**
+       * @brief  リソース読み込み
+       */
+      virtual void LoadResource();
+      /**
+       * @brief  モード切り替え
+       */
+      virtual void ChangeMode();
+
       int _modeCount{ 0 };    //!< 本モード内経過時間(フレーム)
       bool _isLoad{ false };  //!< リソース読み込みフラグ
       //!< アプリケーションの参照

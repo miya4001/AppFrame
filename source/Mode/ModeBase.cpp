@@ -44,5 +44,13 @@ namespace AppFrame {
     Application::ApplicationBase& ModeBase::GetApplication() {
       return _app;
     }
+
+    void ModeBase::LoadResource() {
+
+    }
+
+    void ModeBase::ChangeMode() {
+
+    }
   } // namespace Mode
 } // namespace AppFrame
