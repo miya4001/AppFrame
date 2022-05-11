@@ -23,17 +23,23 @@ namespace AppFrame {
     class InputManager;
   } // namespace Input
   /**
+   * @brief  モード
+   */
+  namespace Mode {
+    class ModeServer;
+  } // namespace Mode
+  /**
    * @brief  画像
    */
   namespace Graphic {
     class GraphicLoadServer;
   } // namespace Graphic
   /**
-   * @brief  モード
+   * @brief  モデル
    */
-  namespace Mode {
-    class ModeServer;
-  } // namespace Mode
+  namespace Model {
+    class ModelLoadServer;
+  } // namespace Model
   /**
    * @brief  アプリケーション
    */
@@ -91,15 +97,20 @@ namespace AppFrame {
        */
       Input::InputManager& GetInputManager();
       /**
-       * @brief  画像読み込みサーバの取得
-       * @return 画像読み込みサーバの取得
-       */
-      Graphic::GraphicLoadServer& GetGraphicLoadServer();
-      /**
        * @brief  モードサーバの取得
        * @return モードサーバの参照
        */
       Mode::ModeServer& GetModeServer();
+      /**
+       * @brief  画像読み込みサーバの取得
+       * @return 画像読み込みサーバの参照
+       */
+      Graphic::GraphicLoadServer& GetGraphicLoadServer();
+      /**
+       * @brief  モデル読み込みサーバの取得
+       * @return モデル読み込みサーバの参照
+       */
+      Model::ModelLoadServer& GetModelLoadServer();
 
     protected:
       /**
@@ -145,10 +156,12 @@ namespace AppFrame {
       static inline std::shared_ptr<ApplicationBase> _application{ nullptr };
       //!< インプットマネージャー
       std::unique_ptr<Input::InputManager> _inputManager{ nullptr };
-      //!< 画像読み込みサーバ
-      std::unique_ptr<Graphic::GraphicLoadServer> _graphicLoadServer{ nullptr };
       //!< モードサーバ
       std::unique_ptr<Mode::ModeServer> _modeServer{ nullptr };
+      //!< 画像読み込みサーバ
+      std::unique_ptr<Graphic::GraphicLoadServer> _graphicLoadServer{ nullptr };
+      //!< モデル読み込みサーバ
+      std::unique_ptr<Model::ModelLoadServer> _modelLoadServer{ nullptr };
     };
   } // namespace Application
 } // namespace AppFrame

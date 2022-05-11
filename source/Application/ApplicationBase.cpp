@@ -10,8 +10,9 @@
 #include <EffekseerForDXLib.h>
 #include <stdexcept>
 #include "../Input/InputManager.h"
-#include "../Graphic/GraphicLoadServer.h"
 #include "../Mode/ModeServer.h"
+#include "../Graphic/GraphicLoadServer.h"
+#include "../Model/ModelLoadServer.h"
 
 namespace {
   constexpr int Error = -1;  //!< エラー
@@ -43,10 +44,12 @@ namespace AppFrame {
       }
       // インプットマネージャーの生成
       _inputManager = std::make_unique<Input::InputManager>(*this);
-      // 画像読み込みサーバの生成
-      _graphicLoadServer = std::make_unique<Graphic::GraphicLoadServer>();
       // モードサーバの生成
       _modeServer = std::make_unique<Mode::ModeServer>(*this);
+      // 画像読み込みサーバの生成
+      _graphicLoadServer = std::make_unique<Graphic::GraphicLoadServer>();
+      // モデル読み込みサーバの生成
+      _modelLoadServer = std::make_unique<Model::ModelLoadServer>();
       return true;  // 初期化成功
     }
 
@@ -94,6 +97,8 @@ namespace AppFrame {
     void ApplicationBase::Release() {
       // 画像読み込みサーバの解放
       _graphicLoadServer->Release();
+      // モデル読み込みサーバの解放
+      _modelLoadServer->Release();
       // モードサーバの解放
       _modeServer->Release();
     }
@@ -172,12 +177,16 @@ namespace AppFrame {
       return *_inputManager;
     }
 
+    Mode::ModeServer& ApplicationBase::GetModeServer() {
+      return *_modeServer;
+    }
+
     Graphic::GraphicLoadServer& ApplicationBase::GetGraphicLoadServer() {
       return *_graphicLoadServer;
     }
 
-    Mode::ModeServer& ApplicationBase::GetModeServer() {
-      return *_modeServer;
+    Model::ModelLoadServer& ApplicationBase::GetModelLoadServer() {
+      return *_modelLoadServer;
     }
   } // namespace Application
 } // namespace AppFrame

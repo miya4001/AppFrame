@@ -73,6 +73,5 @@ namespace AppFrame {
       // ƒŒƒWƒXƒgƒŠ‚É“o˜^‚·‚é
       _modelRegistry.emplace(key.data(), handle);
     }
-  }
   } // namespace Model
 } // namespace AppFrame
