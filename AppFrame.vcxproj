@@ -164,6 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\Application\ApplicationBase.cpp" />
+    <ClCompile Include="source\Effect\EffectLoadServer.cpp" />
     <ClCompile Include="source\Graphic\GraphicLoadServer.cpp" />
     <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Input\InputXJoypad.cpp" />
@@ -178,6 +179,7 @@
   <ItemGroup>
     <ClInclude Include="source\appframe.h" />
     <ClInclude Include="source\Application\ApplicationBase.h" />
+    <ClInclude Include="source\Effect\EffectLoadServer.h" />
     <ClInclude Include="source\Graphic\GraphicLoadServer.h" />
     <ClInclude Include="source\Input\InputManager.h" />
     <ClInclude Include="source\Input\InputXJoypad.h" />

@@ -49,6 +49,12 @@
     <Filter Include="ソース ファイル\Model">
       <UniqueIdentifier>{6540050e-f89b-4fa4-bd3c-8d0f5225b783}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Effect">
+      <UniqueIdentifier>{195ab1dd-3488-44c2-83da-40257493378d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect">
+      <UniqueIdentifier>{2d227fae-aa29-4ca7-ae67-9b07583a8eba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -84,6 +90,9 @@
     <ClCompile Include="source\Model\ModelLoadServer.cpp">
       <Filter>ソース ファイル\Model</Filter>
     </ClCompile>
+    <ClCompile Include="source\Effect\EffectLoadServer.cpp">
+      <Filter>ソース ファイル\Effect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -118,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="source\Model\ModelLoadServer.h">
       <Filter>ヘッダー ファイル\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Effect\EffectLoadServer.h">
+      <Filter>ヘッダー ファイル\Effect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
