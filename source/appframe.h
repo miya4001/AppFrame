@@ -15,3 +15,4 @@
 #include "Mode/ModeServer.h"
 #include "Graphic/GraphicLoadServer.h"
 #include "Model/ModelLoadServer.h"
+#include "Effect/EffectLoadServer.h"

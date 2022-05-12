@@ -41,6 +41,12 @@ namespace AppFrame {
     class ModelLoadServer;
   } // namespace Model
   /**
+   * @brief  エフェクト
+   */
+  namespace Effect {
+    class EffectLoadServer;
+  } // namespace Effect
+  /**
    * @brief  アプリケーション
    */
   namespace Application {
@@ -111,6 +117,11 @@ namespace AppFrame {
        * @return モデル読み込みサーバの参照
        */
       Model::ModelLoadServer& GetModelLoadServer();
+      /**
+       * @brief  エフェクト読み込みサーバの取得
+       * @return エフェクト読み込みサーバの参照
+       */
+      Effect::EffectLoadServer& GetEffectLoadServer();
 
     protected:
       /**
@@ -162,6 +173,8 @@ namespace AppFrame {
       std::unique_ptr<Graphic::GraphicLoadServer> _graphicLoadServer{ nullptr };
       //!< モデル読み込みサーバ
       std::unique_ptr<Model::ModelLoadServer> _modelLoadServer{ nullptr };
+      //!< エフェクト読み込みサーバ
+      std::unique_ptr<Effect::EffectLoadServer> _effectLoadServer{ nullptr };
     };
   } // namespace Application
 } // namespace AppFrame

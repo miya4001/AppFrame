@@ -13,6 +13,7 @@
 #include "../Mode/ModeServer.h"
 #include "../Graphic/GraphicLoadServer.h"
 #include "../Model/ModelLoadServer.h"
+#include "../Effect/EffectLoadServer.h"
 
 namespace {
   constexpr int Error = -1;  //!< エラー
@@ -50,6 +51,8 @@ namespace AppFrame {
       _graphicLoadServer = std::make_unique<Graphic::GraphicLoadServer>();
       // モデル読み込みサーバの生成
       _modelLoadServer = std::make_unique<Model::ModelLoadServer>();
+      // エフェクト読み込みサーバの生成
+      _effectLoadServer = std::make_unique<Effect::EffectLoadServer>();
       return true;  // 初期化成功
     }
 
@@ -95,12 +98,14 @@ namespace AppFrame {
     }
 
     void ApplicationBase::Release() {
+      // モードサーバの解放
+      _modeServer->Release();
       // 画像読み込みサーバの解放
       _graphicLoadServer->Release();
       // モデル読み込みサーバの解放
       _modelLoadServer->Release();
-      // モードサーバの解放
-      _modeServer->Release();
+      // エフェクト読み込みサーバの解放
+      _effectLoadServer->Release();
     }
 
     void ApplicationBase::Input() {
@@ -187,6 +192,10 @@ namespace AppFrame {
 
     Model::ModelLoadServer& ApplicationBase::GetModelLoadServer() {
       return *_modelLoadServer;
+    }
+
+    Effect::EffectLoadServer& ApplicationBase::GetEffectLoadServer() {
+      return *_effectLoadServer;
     }
   } // namespace Application
 } // namespace AppFrame
