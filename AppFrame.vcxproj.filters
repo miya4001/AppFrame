@@ -55,6 +55,12 @@
     <Filter Include="ソース ファイル\Effect">
       <UniqueIdentifier>{2d227fae-aa29-4ca7-ae67-9b07583a8eba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Sound">
+      <UniqueIdentifier>{b49ca5bf-fcde-42ca-9344-ec7ad9361d1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound">
+      <UniqueIdentifier>{e4754a5b-7b13-4ad0-806f-2bebc2bd9628}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -93,6 +99,9 @@
     <ClCompile Include="source\Effect\EffectLoadServer.cpp">
       <Filter>ソース ファイル\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="source\Sound\SoundLoadServer.cpp">
+      <Filter>ソース ファイル\Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -130,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="source\Effect\EffectLoadServer.h">
       <Filter>ヘッダー ファイル\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Sound\SoundLoadServer.h">
+      <Filter>ヘッダー ファイル\Sound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
