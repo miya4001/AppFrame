@@ -14,6 +14,7 @@
 #include "../Graphic/GraphicLoadServer.h"
 #include "../Model/ModelLoadServer.h"
 #include "../Effect/EffectLoadServer.h"
+#include "../Sound/SoundLoadServer.h"
 
 namespace {
   constexpr int Error = -1;  //!< エラー
@@ -53,6 +54,8 @@ namespace AppFrame {
       _modelLoadServer = std::make_unique<Model::ModelLoadServer>();
       // エフェクト読み込みサーバの生成
       _effectLoadServer = std::make_unique<Effect::EffectLoadServer>();
+      // 音源読み込みサーバの生成
+      _soundLoadServer = std::make_unique<Sound::SoundLoadServer>();
       return true;  // 初期化成功
     }
 
@@ -106,6 +109,8 @@ namespace AppFrame {
       _modelLoadServer->Release();
       // エフェクト読み込みサーバの解放
       _effectLoadServer->Release();
+      // 音源読み込みサーバの解放
+      _soundLoadServer->Release();
     }
 
     void ApplicationBase::Input() {
@@ -196,6 +201,10 @@ namespace AppFrame {
 
     Effect::EffectLoadServer& ApplicationBase::GetEffectLoadServer() {
       return *_effectLoadServer;
+    }
+
+    Sound::SoundLoadServer& ApplicationBase::GetSoundLoadServer() {
+      return *_soundLoadServer;
     }
   } // namespace Application
 } // namespace AppFrame

@@ -16,3 +16,4 @@
 #include "Graphic/GraphicLoadServer.h"
 #include "Model/ModelLoadServer.h"
 #include "Effect/EffectLoadServer.h"
+#include "Sound/SoundLoadServer.h"
