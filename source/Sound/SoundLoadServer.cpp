@@ -7,7 +7,6 @@
  *********************************************************************/
 #include "SoundLoadServer.h"
 #include <DxLib.h>
-#include <stdexcept>
 
 namespace AppFrame {
   namespace Sound {
@@ -66,7 +65,7 @@ namespace AppFrame {
       // 音源の読み込みに失敗した場合エラー
       if (handle == -1) {
 #ifdef _DEBUG
-        throw std::logic_error("SoundLoadServer:音源の読み込みに失敗しました\n");
+        throw ("SoundLoadServer:音源の読み込みに失敗しました\n");
 #endif
         return;  // パスが不正
       }

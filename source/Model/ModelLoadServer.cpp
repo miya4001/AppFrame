@@ -7,7 +7,6 @@
  *********************************************************************/
 #include "ModelLoadServer.h"
 #include <DxLib.h>
-#include <stdexcept>
 
 namespace AppFrame {
   namespace Model {
@@ -66,7 +65,7 @@ namespace AppFrame {
       // モデルの読み込みに失敗した場合エラー
       if (handle == -1) {
 #ifdef _DEBUG
-        throw std::logic_error("ModelLoadServer:モデルの読み込みに失敗しました\n");
+        throw ("ModelLoadServer:モデルの読み込みに失敗しました\n");
 #endif
         return;  // パスが不正
       }

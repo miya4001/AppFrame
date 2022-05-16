@@ -7,7 +7,6 @@
  *********************************************************************/
 #include "GraphicLoadServer.h"
 #include <DxLib.h>
-#include <stdexcept>
 
 namespace AppFrame {
   namespace Graphic {
@@ -66,7 +65,7 @@ namespace AppFrame {
       // 画像の読み込みに失敗した場合エラー
       if (handle == -1) {
 #ifdef _DEBUG
-        throw std::logic_error("GraphicLoadServer:画像の読み込みに失敗しました\n");
+        throw ("GraphicLoadServer:画像の読み込みに失敗しました\n");
 #endif
         return;  // パスが不正
       }

@@ -7,7 +7,6 @@
  *********************************************************************/
 #include "EffectLoadServer.h"
 #include <EffekseerForDXLib.h>
-#include <stdexcept>
 
 namespace AppFrame {
   namespace Effect {
@@ -66,7 +65,7 @@ namespace AppFrame {
       // エフェクトの読み込みに失敗した場合エラー
       if (handle == -1) {
 #ifdef _DEBUG
-        throw std::logic_error("EffectLoadServer:エフェクトの読み込みに失敗しました\n");
+        throw ("EffectLoadServer:エフェクトの読み込みに失敗しました\n");
 #endif
         return;  // パスが不正
       }
