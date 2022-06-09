@@ -61,6 +61,12 @@
     <Filter Include="ソース ファイル\Sound">
       <UniqueIdentifier>{e4754a5b-7b13-4ad0-806f-2bebc2bd9628}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Math">
+      <UniqueIdentifier>{c3a21f86-c421-458b-8ed8-e5834535e851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Math">
+      <UniqueIdentifier>{e3ba0473-2b63-41a5-a480-5b33a5927e8e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -102,6 +108,9 @@
     <ClCompile Include="source\Sound\SoundLoadServer.cpp">
       <Filter>ソース ファイル\Sound</Filter>
     </ClCompile>
+    <ClCompile Include="source\Math\Vector4.cpp">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -142,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="source\Sound\SoundLoadServer.h">
       <Filter>ヘッダー ファイル\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Math\Vector4.h">
+      <Filter>ヘッダー ファイル\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
