@@ -168,6 +168,7 @@
     <ClCompile Include="source\Graphic\GraphicLoadServer.cpp" />
     <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Input\InputXJoypad.cpp" />
+    <ClCompile Include="source\Math\Matrix44.cpp" />
     <ClCompile Include="source\Math\Vector4.cpp" />
     <ClCompile Include="source\Model\ModelLoadServer.cpp" />
     <ClCompile Include="source\Mode\Fade\ModeFadeBase.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="source\Graphic\GraphicLoadServer.h" />
     <ClInclude Include="source\Input\InputManager.h" />
     <ClInclude Include="source\Input\InputXJoypad.h" />
+    <ClInclude Include="source\Math\Matrix44.h" />
     <ClInclude Include="source\Math\Vector4.h" />
     <ClInclude Include="source\Model\ModelLoadServer.h" />
     <ClInclude Include="source\Mode\Fade\ModeFadeBase.h" />
