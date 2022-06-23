@@ -17,3 +17,6 @@
 #include "Model/ModelLoadServer.h"
 #include "Effect/EffectLoadServer.h"
 #include "Sound/SoundLoadServer.h"
+#include "Math/Vector4.h"
+#include "Math/Matrix44.h"
+#include "Math/UtilityDX.h"
