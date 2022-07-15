@@ -169,6 +169,7 @@
     <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Input\InputXJoypad.cpp" />
     <ClCompile Include="source\Math\Matrix44.cpp" />
+    <ClCompile Include="source\Math\Utility.cpp" />
     <ClCompile Include="source\Math\UtilityDX.cpp" />
     <ClCompile Include="source\Math\Vector4.cpp" />
     <ClCompile Include="source\Model\ModelLoadServer.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="source\Input\InputManager.h" />
     <ClInclude Include="source\Input\InputXJoypad.h" />
     <ClInclude Include="source\Math\Matrix44.h" />
+    <ClInclude Include="source\Math\Utility.h" />
     <ClInclude Include="source\Math\UtilityDX.h" />
     <ClInclude Include="source\Math\Vector4.h" />
     <ClInclude Include="source\Model\ModelLoadServer.h" />
