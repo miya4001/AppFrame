@@ -150,7 +150,7 @@ namespace AppFrame {
       return vector - *this;
     }
 
-    bool IsZero(const Vector4& vector) {
+    bool Vector4::IsZero(const Vector4& vector) {
       return vector.LengthSquared() == 0.0f;
     }
 
