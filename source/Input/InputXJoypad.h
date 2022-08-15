@@ -66,6 +66,20 @@ namespace AppFrame {
        *         second:縦軸の入力状態
        */
       std::pair<int, int> GetStick(const bool stick) const;
+      /**
+       * @brief  デッドゾーン最低値の取得
+       * @return デッドゾーン最低値
+       */
+      inline short GetDeadZoneMin() const {
+        return _deadZone.first;
+      }
+      /**
+       * @brief  デッドゾーン最大値の取得
+       * @return デッドゾーン最大値
+       */
+      inline short GetDeadZoneMax() const {
+        return _deadZone.second;
+      }
 
     private:
       /**
