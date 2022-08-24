@@ -13,6 +13,7 @@ namespace AppFrame {
     Vector4::Vector4() {
       // ‹óƒxƒNƒgƒ‹
       Zero();
+      _w = 1.0f;
     }
 
     Vector4::Vector4(const float x, const float y) {
