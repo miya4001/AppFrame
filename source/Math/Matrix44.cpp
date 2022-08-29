@@ -103,8 +103,8 @@ namespace AppFrame {
       auto cos = std::cos(angle);
       auto sin = std::sin(angle);
       matrix._rowColumn[0][0] = cos;
-      matrix._rowColumn[0][2] = sin;
-      matrix._rowColumn[2][0] = -sin;
+      matrix._rowColumn[0][2] = -sin;
+      matrix._rowColumn[2][0] = sin;
       matrix._rowColumn[2][2] = cos;
       return matrix;
     }
@@ -115,8 +115,8 @@ namespace AppFrame {
       auto cos = std::cos(angle);
       auto sin = std::sin(angle);
       matrix._rowColumn[0][0] = cos;
-      matrix._rowColumn[0][1] = -sin;
-      matrix._rowColumn[1][0] = sin;
+      matrix._rowColumn[0][1] = sin;
+      matrix._rowColumn[1][0] = -sin;
       matrix._rowColumn[1][1] = cos;
       return matrix;
     }
