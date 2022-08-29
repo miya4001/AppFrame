@@ -59,5 +59,16 @@ namespace AppFrame {
       worldMatrix.MulTranslate(position);
       return worldMatrix;
     }
+
+    Vector4 Utility::TransformVector(const Vector4& vector, const Matrix44& matrix) {
+      // 変換ベクトル
+      Vector4 result;
+      // 行列変換処理
+      float x = vector.GetX() * matrix.GetValue(0, 0) + vector.GetY() * matrix.GetValue(1, 0) + vector.GetZ() * matrix.GetValue(2, 0) + matrix.GetValue(3, 0);
+      float y = vector.GetX() * matrix.GetValue(0, 1) + vector.GetY() * matrix.GetValue(1, 1) + vector.GetZ() * matrix.GetValue(2, 1) + matrix.GetValue(3, 1);
+      float z = vector.GetX() * matrix.GetValue(0, 2) + vector.GetY() * matrix.GetValue(1, 2) + vector.GetZ() * matrix.GetValue(2, 2) + matrix.GetValue(3, 2);
+      result.Set(x, y, z);
+      return result;
+    }
   } // namespace Math
 } // namespace AppFrame

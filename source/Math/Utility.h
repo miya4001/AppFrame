@@ -95,6 +95,13 @@ namespace AppFrame {
        * @return ワールド座標
        */
       static Matrix44 ToWorldMatrix(const Vector4& position, Vector4 rotation, const Vector4& scale, const bool angle);
+      /**
+       * @brief  行列を使用したベクトルの変換
+       * @param  vector 変換するベクトル
+       * @param  matrix 使用する行列
+       * @return 変換したベクトル
+       */
+      static Vector4 TransformVector(const Vector4& vector, const Matrix44& matrix);
     };
   } // namespace Math
 } // namespace AppFrame
