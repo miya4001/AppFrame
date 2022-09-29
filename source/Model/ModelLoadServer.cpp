@@ -20,6 +20,8 @@ namespace AppFrame {
     }
 
     void ModelLoadServer::Release() {
+      // 複製したモデルの解放
+      DeleteDuplicateModels();
       // レジストリが空の場合中断
       if (_modelRegistry.empty()) {
         return;
@@ -41,6 +43,20 @@ namespace AppFrame {
       }
     }
 
+    void ModelLoadServer::DeleteDuplicateModels() {
+      // レジストリが空の場合中断
+      if (_duplicateRegistry.empty()) {
+        return;
+      }
+      // 複製したモデルハンドルの全開放
+      for (auto handle : _duplicateRegistry) {
+        // メモリ上からモデルハンドルの削除
+        MV1DeleteModel(handle);
+      }
+      // レジストリの解放
+      _duplicateRegistry.clear();
+    }
+
     int ModelLoadServer::GetModelHandle(const std::string_view key) const {
       // キーが有効でない場合-1
       if (!_modelRegistry.contains(key.data())) {
@@ -48,6 +64,15 @@ namespace AppFrame {
       }
       // モデルハンドルを返す
       return _modelRegistry.at(key.data());
+    }
+
+    int ModelLoadServer::GetDuplicateModelHandle(const std::string_view key) {
+      // キーが有効でない場合-1
+      if (!_modelRegistry.contains(key.data())) {
+        return -1;
+      }
+      // 複製したモデルハンドルを返す
+      return DuplicateModel(key);
     }
 
     void ModelLoadServer::LoadModel(const std::string_view key, const std::string_view path) {
@@ -71,6 +96,24 @@ namespace AppFrame {
       }
       // レジストリに登録する
       _modelRegistry.emplace(key.data(), handle);
+    }
+
+    int ModelLoadServer::DuplicateModel(const std::string_view key) {
+      // オリジナルのモデルハンドル
+      int original = GetModelHandle(key);
+      // 複製したモデルハンドル
+      int duplicate = MV1DuplicateModel(original);
+      // モデルの複製に失敗した場合エラー
+      if (duplicate == -1) {
+#ifdef _DEBUG
+        throw ("ModelLoadServer:モデルの複製に失敗しました\n");
+#endif
+        return duplicate;
+      }
+      // レジストリに登録する
+      _duplicateRegistry.emplace_back(duplicate);
+      // 複製したモデルハンドルを返す
+      return duplicate;
     }
   } // namespace Model
 } // namespace AppFrame
