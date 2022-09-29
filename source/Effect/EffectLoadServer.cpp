@@ -24,7 +24,7 @@ namespace AppFrame {
       if (_effectRegistry.empty()) {
         return;
       }
-      // エフェクトハンドルの全開放
+      // エフェクトハンドルの全解放
       for (auto [key, handle] : _effectRegistry) {
         // メモリ上からエフェクトハンドルの削除
         DeleteEffekseerEffect(handle);
@@ -44,6 +44,9 @@ namespace AppFrame {
     int EffectLoadServer::GetEffectHandle(const std::string_view key) const {
       // キーが有効でない場合-1
       if (!_effectRegistry.contains(key.data())) {
+#ifdef _DEBUG
+        throw ("EffectLoadServer:キーが不正です\n");
+#endif
         return -1;
       }
       // エフェクトハンドルを返す

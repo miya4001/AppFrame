@@ -24,7 +24,7 @@ namespace AppFrame {
       if (_graphicRegistry.empty()) {
         return;
       }
-      // 画像ハンドルの全開放
+      // 画像ハンドルの全解放
       for (auto [key, handle] : _graphicRegistry) {
         // メモリ上から画像ハンドルの削除
         DeleteGraph(handle);
@@ -44,6 +44,9 @@ namespace AppFrame {
     int GraphicLoadServer::GetGraphicHandle(const std::string_view key) const {
       // キーが有効でない場合-1
       if (!_graphicRegistry.contains(key.data())) {
+#ifdef _DEBUG
+        throw ("GraphicLoadServer:キーが不正です\n");
+#endif
         return -1;
       }
       // 画像ハンドルを返す

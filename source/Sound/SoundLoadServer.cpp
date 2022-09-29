@@ -24,7 +24,7 @@ namespace AppFrame {
       if (_soundRegistry.empty()) {
         return;
       }
-      // 音源ハンドルの全開放
+      // 音源ハンドルの全解放
       for (auto [key, handle] : _soundRegistry) {
         // メモリ上から音源ハンドルの削除
         DeleteSoundMem(handle);
@@ -44,6 +44,9 @@ namespace AppFrame {
     int SoundLoadServer::GetSoundHandle(const std::string_view key) const {
       // キーが有効でない場合-1
       if (!_soundRegistry.contains(key.data())) {
+#ifdef _DEBUG
+        throw ("SoundLoadServer:キーが不正です\n");
+#endif
         return -1;
       }
       // 音源ハンドルを返す

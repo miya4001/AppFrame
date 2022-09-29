@@ -26,7 +26,7 @@ namespace AppFrame {
       if (_modelRegistry.empty()) {
         return;
       }
-      // モデルハンドルの全開放
+      // モデルハンドルの全解放
       for (auto [key, handle] : _modelRegistry) {
         // メモリ上からモデルハンドルの削除
         MV1DeleteModel(handle);
@@ -48,7 +48,7 @@ namespace AppFrame {
       if (_duplicateRegistry.empty()) {
         return;
       }
-      // 複製したモデルハンドルの全開放
+      // 複製したモデルハンドルの全解放
       for (auto handle : _duplicateRegistry) {
         // メモリ上からモデルハンドルの削除
         MV1DeleteModel(handle);
@@ -60,6 +60,9 @@ namespace AppFrame {
     int ModelLoadServer::GetModelHandle(const std::string_view key) const {
       // キーが有効でない場合-1
       if (!_modelRegistry.contains(key.data())) {
+#ifdef _DEBUG
+        throw ("ModelLoadServer:キーが不正です\n");
+#endif
         return -1;
       }
       // モデルハンドルを返す
@@ -69,6 +72,9 @@ namespace AppFrame {
     int ModelLoadServer::GetDuplicateModelHandle(const std::string_view key) {
       // キーが有効でない場合-1
       if (!_modelRegistry.contains(key.data())) {
+#ifdef _DEBUG
+        throw ("ModelLoadServer:キーが不正です\n");
+#endif
         return -1;
       }
       // 複製したモデルハンドルを返す
