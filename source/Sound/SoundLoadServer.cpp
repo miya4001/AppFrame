@@ -25,7 +25,7 @@ namespace AppFrame {
         return;
       }
       // 音源ハンドルの全解放
-      for (auto [key, handle] : _soundRegistry) {
+      for (auto&& [key, handle] : _soundRegistry) {
         // メモリ上から音源ハンドルの削除
         DeleteSoundMem(handle);
       }
@@ -35,7 +35,7 @@ namespace AppFrame {
 
     void SoundLoadServer::LoadSounds(const LoadSoundMap sound) {
       // コンテナからデータの読み込み
-      for (auto [key, path] : sound) {
+      for (auto&& [key, path] : sound) {
         // 音源の読み込み
         LoadSound(key, path);
       }

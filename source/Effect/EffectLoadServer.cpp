@@ -25,7 +25,7 @@ namespace AppFrame {
         return;
       }
       // エフェクトハンドルの全解放
-      for (auto [key, handle] : _effectRegistry) {
+      for (auto&& [key, handle] : _effectRegistry) {
         // メモリ上からエフェクトハンドルの削除
         DeleteEffekseerEffect(handle);
       }
@@ -35,7 +35,7 @@ namespace AppFrame {
 
     void EffectLoadServer::LoadEffects(const LoadEffectMap effect) {
       // コンテナからデータの読み込み
-      for (auto [key, path, magni] : effect) {
+      for (auto&& [key, path, magni] : effect) {
         // エフェクトの読み込み
         LoadEffect(key, path, magni);
       }

@@ -25,7 +25,7 @@ namespace AppFrame {
         return;
       }
       // 画像ハンドルの全解放
-      for (auto [key, handle] : _graphicRegistry) {
+      for (auto&& [key, handle] : _graphicRegistry) {
         // メモリ上から画像ハンドルの削除
         DeleteGraph(handle);
       }
@@ -35,7 +35,7 @@ namespace AppFrame {
 
     void GraphicLoadServer::LoadGraphics(const LoadGraphicMap graphic) {
       // コンテナからデータの読み込み
-      for (auto [key, path] : graphic) {
+      for (auto&& [key, path] : graphic) {
         // 画像の読み込み
         LoadGraphic(key, path);
       }

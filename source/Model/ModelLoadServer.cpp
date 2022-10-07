@@ -27,7 +27,7 @@ namespace AppFrame {
         return;
       }
       // モデルハンドルの全解放
-      for (auto [key, handle] : _modelRegistry) {
+      for (auto&& [key, handle] : _modelRegistry) {
         // メモリ上からモデルハンドルの削除
         MV1DeleteModel(handle);
       }
@@ -37,7 +37,7 @@ namespace AppFrame {
 
     void ModelLoadServer::LoadModels(const LoadModelMap model) {
       // コンテナからデータの読み込み
-      for (auto [key, path] : model) {
+      for (auto&& [key, path] : model) {
         // モデルの読み込み
         LoadModel(key, path);
       }
