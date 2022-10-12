@@ -178,6 +178,7 @@
     <ClCompile Include="source\Mode\Fade\ModeFadeOut.cpp" />
     <ClCompile Include="source\Mode\ModeBase.cpp" />
     <ClCompile Include="source\Mode\ModeServer.cpp" />
+    <ClCompile Include="source\Sound\SoundComponent.cpp" />
     <ClCompile Include="source\Sound\SoundLoadServer.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
@@ -198,6 +199,7 @@
     <ClInclude Include="source\Mode\Fade\ModeFadeOut.h" />
     <ClInclude Include="source\Mode\ModeBase.h" />
     <ClInclude Include="source\Mode\ModeServer.h" />
+    <ClInclude Include="source\Sound\SoundComponent.h" />
     <ClInclude Include="source\Sound\SoundLoadServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
