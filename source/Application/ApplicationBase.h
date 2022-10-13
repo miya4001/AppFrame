@@ -51,6 +51,7 @@ namespace AppFrame {
    */
   namespace Sound {
     class SoundLoadServer;
+    class SoundComponent;
   } // namespace Sound
   /**
    * @brief  アプリケーション
@@ -133,6 +134,11 @@ namespace AppFrame {
        * @return 音源読み込みサーバの参照
        */
       Sound::SoundLoadServer& GetSoundLoadServer();
+      /**
+       * @brief  音源コンポーネントの取得
+       * @return 音源コンポーネントの参照
+       */
+      Sound::SoundComponent& GetSoundComponent();
 
     protected:
       /**
@@ -188,6 +194,8 @@ namespace AppFrame {
       std::unique_ptr<Effect::EffectLoadServer> _effectLoadServer{ nullptr };
       //!< 音源読み込みサーバ
       std::unique_ptr<Sound::SoundLoadServer> _soundLoadServer{ nullptr };
+      //!< 音源コンポーネント
+      std::unique_ptr<Sound::SoundComponent> _soundComponent{ nullptr };
     };
   } // namespace Application
 } // namespace AppFrame
