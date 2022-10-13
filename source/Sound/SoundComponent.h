@@ -69,13 +69,13 @@ namespace AppFrame {
        * @param  key 音源に紐づけられた文字列
        * @param  type 再生タイプ
        */
-      void PlaySound(const std::string_view key, const int type);
+      void Play(const std::string_view key, const int type);
       /**
        * @brief  音源の音量の設定
        * @param  key 音源に紐づけられた文字列
        * @param  volume 再生音量(0~255)
        */
-      void SetBolume(const std::string_view key, const int volume);
+      void SetVolume(const std::string_view key, const int volume);
       /**
        * @brief  音源ハンドルの取得
        * @param  key 音源に紐づけられた文字列
