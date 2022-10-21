@@ -123,6 +123,9 @@
     <ClCompile Include="source\Sound\SoundComponent.cpp">
       <Filter>ソース ファイル\Sound</Filter>
     </ClCompile>
+    <ClCompile Include="source\Graphic\DivGraphData.cpp">
+      <Filter>ソース ファイル\Graphic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\appframe.h">
@@ -178,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="source\Sound\SoundComponent.h">
       <Filter>ヘッダー ファイル\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Graphic\DivGraphData.h">
+      <Filter>ヘッダー ファイル\Graphic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
