@@ -13,6 +13,7 @@
 #include "Input/InputXJoypad.h"
 #include "Mode/ModeBase.h"
 #include "Mode/ModeServer.h"
+#include "Graphic/DivGraphData.h"
 #include "Graphic/GraphicLoadServer.h"
 #include "Model/ModelLoadServer.h"
 #include "Effect/EffectLoadServer.h"
