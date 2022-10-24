@@ -13,6 +13,7 @@ namespace AppFrame {
     ModelLoadServer::ModelLoadServer() {
       // ƒŒƒWƒXƒgƒŠ‚Ì‰Šú‰»
       _modelRegistry.clear();
+      _duplicateRegistry.clear();
     }
 
     ModelLoadServer::~ModelLoadServer() {
