@@ -32,6 +32,14 @@ namespace AppFrame {
       return (value < 0.0f) ? value * -1.0f : value;
     }
 
+    bool Utility::IsPositive(const int value) {
+      return value <= 0;
+    }
+
+    bool Utility::IsRange(const int value, const int min, const int max) {
+      return min <= value && value <= max;
+    }
+
     Vector4 Utility::RotationToRadian(const Vector4& rotation) {
       // ŠeŽí¬•ª‚ÌŽæ“¾
       auto [x, y, z] = rotation.GetVector3();

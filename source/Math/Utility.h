@@ -59,11 +59,27 @@ namespace AppFrame {
        */
       static float Max(const float a, const float b);
       /**
-       * @brief  引数を正数に変換
-       * @param  value 変換する値
-       * @return 引数を正数に変換した値
+       * @brief  対象値を正数に変換
+       * @param  value 対象値
+       * @return 対象値を正数に変換した値
        */
       static float ToPlus(const float value);
+      /**
+       * @brief  対象値が正数か判定
+       * @param  value 対象値
+       * @return true:正数
+       *         false:負数
+       */
+      static bool IsPositive(const int value);
+      /**
+       * @brief  対象値が範囲内に収まっているか判定
+       * @param  value 対象値
+       * @param  min 最小値
+       * @param  max 最大値
+       * @return true:範囲内
+       *         false:範囲外
+       */
+      static bool IsRange(const int value, const int min, const int max);
       /**
        * @brief  デグリー値をラジアン値に変換
        * @param  degree デグリー値
