@@ -6,6 +6,7 @@
  * @date   July 2022
  *********************************************************************/
 #include "Utility.h"
+#include <algorithm>
 #include "Vector4.h"
 #include "Matrix44.h"
 
@@ -25,6 +26,14 @@ namespace AppFrame {
 
     float Utility::Max(const float a, const float b) {
       return (b < a) ? a : b;
+    }
+
+    int Utility::Clamp(const int value, const int min, const int max) {
+      return std::clamp(value, min, max);
+    }
+
+    float Utility::Clamp(const float value, const float min, const float max) {
+      return std::clamp(value, min, max);
     }
 
     float Utility::ToPlus(const float value) {

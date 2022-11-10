@@ -59,6 +59,22 @@ namespace AppFrame {
        */
       static float Max(const float a, const float b);
       /**
+       * @brief  クランプ処理(int型)
+       * @param  value 対象値
+       * @param  min 最小値
+       * @param  max 最大値
+       * @return クランプした値
+       */
+      static int Clamp(const int value, const int min, const int max);
+      /**
+       * @brief  クランプ処理(float型)
+       * @param  value 対象値
+       * @param  min 最小値
+       * @param  max 最大値
+       * @return クランプした値
+       */
+      static float Clamp(const float value, const float min, const float max);
+      /**
        * @brief  対象値を正数に変換
        * @param  value 対象値
        * @return 対象値を正数に変換した値
