@@ -49,6 +49,15 @@ namespace AppFrame {
       return min <= value && value <= max;
     }
 
+    int Utility::IncrementCount(const int count, const int max) {
+      // カウント上限の場合0
+      if (max <= count) {
+        return 0;
+      }
+      // カウントを1増やした値
+      return count + 1;
+    }
+
     Vector4 Utility::RotationToRadian(const Vector4& rotation) {
       // 各種成分の取得
       auto [x, y, z] = rotation.GetVector3();

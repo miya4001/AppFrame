@@ -97,6 +97,14 @@ namespace AppFrame {
        */
       static bool IsRange(const int value, const int min, const int max);
       /**
+       * @brief  カウント増加
+       * @param  count カウント
+       * @param  max カウント上限
+       * @return カウントを1増やした値
+       *         カウント上限の場合0を返す
+       */
+      static int IncrementCount(const int count, const int max);
+      /**
        * @brief  デグリー値をラジアン値に変換
        * @param  degree デグリー値
        * @return ラジアン値
