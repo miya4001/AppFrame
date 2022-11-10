@@ -7,9 +7,9 @@
  *********************************************************************/
 #include "SoundComponent.h"
 #include <DxLib.h>
-#include <algorithm>
 #include "../Application/ApplicationBase.h"
 #include "SoundLoadServer.h"
+#include "../Math/Utility.h"
 
 namespace {
   constexpr int VolumeMin = 0;    //!< 最小音量
@@ -76,7 +76,7 @@ namespace AppFrame {
       // 音源ハンドルの取得
       int handle = GetSoundHandle(key);
       // 音量のクランプ処理
-      int clampVolume = std::clamp(volume, VolumeMin, VolumeMax);
+      int clampVolume = AppFrame::Math::Utility::Clamp(volume, VolumeMin, VolumeMax);
       // 音源の音量の設定
       ChangeVolumeSoundMem(clampVolume, handle);
     }

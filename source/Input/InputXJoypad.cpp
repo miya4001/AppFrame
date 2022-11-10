@@ -8,11 +8,15 @@
 #include "InputXJoypad.h"
 #include <DxLib.h>
 #include <algorithm>
+#include "../Math/Utility.h"
 
 namespace {
-  constexpr int DeadZoneMin = 3000;   //!< デッドゾーン下限絶対値
-  constexpr int DeadZoneMax = 30000;  //!< デッドゾーン上限絶対値
-  constexpr int Error = -1;           //!< エラー
+  constexpr int DeadZoneMin = 3000;    //!< デッドゾーン下限絶対値
+  constexpr int DeadZoneMax = 30000;   //!< デッドゾーン上限絶対値
+  constexpr int Error = -1;            //!< エラー
+  constexpr int ButtonNumberMin = 0;   //!< ボタン番号下限
+  constexpr int ButtonNumberMax = 15;  //!< ボタン番号上限
+
 } // namespace
 
 namespace AppFrame {
@@ -47,7 +51,7 @@ namespace AppFrame {
 
     bool InputXJoypad::GetButton(const int key, const bool type) const {
       // 範囲内判定
-      bool isRange = 0 <= key && key <= 15;
+      bool isRange = AppFrame::Math::Utility::IsRange(key, ButtonNumberMin, ButtonNumberMax);
       // 範囲内に収まっていない場合
       if (!isRange) {
         return false;  // キーが不正
