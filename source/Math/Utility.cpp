@@ -42,7 +42,7 @@ namespace AppFrame {
     }
 
     bool Utility::IsPositive(const int value) {
-      return value <= 0;
+      return 0 <= value;
     }
 
     bool Utility::IsRange(const int value, const int min, const int max) {
