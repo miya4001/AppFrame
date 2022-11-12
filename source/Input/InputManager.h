@@ -6,6 +6,7 @@
  * @date   April 2022
  *********************************************************************/
 #include "InputXJoypad.h"
+#include "InputKeyboard.h"
 
 /**
  * @brief  アプリケーションフレーム
@@ -47,12 +48,21 @@ namespace AppFrame {
       inline InputXJoypad& GetXJoypad() {
         return _xJoypad;
       }
+      /**
+       * @brief  キーボードの入力処理の取得
+       * @return キーボードの入力処理の参照
+       */
+      inline InputKeyboard& GetKeyboard() {
+        return _keyboard;
+      }
 
     private:
       //!< アプリケーションの参照
       Application::ApplicationBase& _app;
-      //!< XInputジョイパッドの入力処理の参照
+      //!< XInputジョイパッドの入力処理
       InputXJoypad _xJoypad;
+      //!< キーボードの入力処理
+      InputKeyboard _keyboard;
     };
   } // namespace Input
 } // namespace AppFrame

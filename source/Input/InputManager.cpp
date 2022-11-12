@@ -21,6 +21,8 @@ namespace AppFrame {
     void InputManager::Process() {
       // XInputジョイパッドの更新
       _xJoypad.Process();
+      // キーボードの更新
+      _keyboard.Process();
     }
   } // namespace Input
 } // namespace AppFrame

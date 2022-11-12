@@ -11,6 +11,7 @@
 #include "Application/ApplicationBase.h"
 #include "Input/InputManager.h"
 #include "Input/InputXJoypad.h"
+#include "Input/InputKeyboard.h"
 #include "Mode/ModeBase.h"
 #include "Mode/ModeServer.h"
 #include "Graphic/DivGraphData.h"

@@ -13,8 +13,8 @@
  */
 namespace AppFrame {
   /**
- * @brief  “ü—Í
- */
+   * @brief  “ü—Í
+   */
   namespace Input {
     constexpr int AllKeyNumber = 256;  //!< ƒL[‘”
     /**
