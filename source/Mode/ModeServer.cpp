@@ -51,7 +51,7 @@ namespace AppFrame {
       // キーボードの入力処理の取得
       auto&& keyboard = _app.GetInputManager().GetKeyboard();
       // Escapeキーが押されている場合中断
-      if (keyboard.GetKey(KEY_INPUT_ESCAPE, AppInput::InputPress)) {
+      if (keyboard.GetKey(KEY_INPUT_ESCAPE, Input::InputPress)) {
         // アプリケーションの終了要請
         _app.RequestTerminate();
         return;
