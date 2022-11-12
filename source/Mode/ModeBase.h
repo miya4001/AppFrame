@@ -27,6 +27,7 @@ namespace AppFrame {
    * @brief  モード
    */
   namespace Mode {
+    namespace AppInput = AppFrame::Input;
     /**
      * @class  ModeBase
      * @brief  モードの基底クラス
@@ -60,7 +61,7 @@ namespace AppFrame {
        * @brief  入力
        * @param  input インプットマネージャーの参照
        */
-      virtual void Input(Input::InputManager& input);
+      virtual void Input(AppInput::InputManager& input);
       /**
        * @brief  更新
        */

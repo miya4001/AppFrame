@@ -29,7 +29,7 @@ namespace AppFrame {
 
     }
 
-    void ModeBase::Input(Input::InputManager& input) {
+    void ModeBase::Input(AppInput::InputManager& input) {
 
     }
 

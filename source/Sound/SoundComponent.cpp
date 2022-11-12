@@ -14,7 +14,7 @@
 namespace {
   constexpr int VolumeMin = 0;    //!< Å¬‰¹—Ê
   constexpr int VolumeMax = 255;  //!< Å‘å‰¹—Ê
-}
+} // namespace
 
 namespace AppFrame {
   namespace Sound {

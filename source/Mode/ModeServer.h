@@ -20,12 +20,6 @@ namespace AppFrame {
     class ApplicationBase;
   } // namespace Application
   /**
-   * @brief  “ü—Í
-   */
-  namespace Input {
-    class InputManager;
-  } // namespace InputManager
-  /**
    * @brief  ƒ‚[ƒh
    */
   namespace Mode {

@@ -10,8 +10,8 @@
 #include "../Math/Utility.h"
 
 namespace {
-  constexpr int DeadZoneMin = 3000;    //!< デッドゾーン下限絶対値
-  constexpr int DeadZoneMax = 30000;   //!< デッドゾーン上限絶対値
+  constexpr int DeadZoneMin = 3000;   //!< デッドゾーン下限絶対値
+  constexpr int DeadZoneMax = 30000;  //!< デッドゾーン上限絶対値
 } // namespace
 
 namespace AppFrame {
@@ -39,10 +39,11 @@ namespace AppFrame {
       // アナログスティックの更新
       AnalogStickUpdate();
       // ボタンのトリガ情報の更新
-      for (auto no = 0; auto && button : _trigger) {
+      for (auto num = 0; auto && button : _trigger) {
         // 入力状態を比較してトリガ情報を算出
-        button = Trigger(_press.Buttons[no], old.Buttons[no]);
-        no++;
+        button = Trigger(_press.Buttons[num], old.Buttons[num]);
+        // 番号を増やす
+        ++num;
       }
     }
 
