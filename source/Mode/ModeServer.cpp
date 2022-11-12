@@ -7,6 +7,9 @@
  *********************************************************************/
 #include "ModeServer.h"
 #include <stdexcept>
+#include "../Application/ApplicationBase.h"
+#include "../Input/InputManager.h"
+#include "../Input/InputKeyboard.h"
 #include "ModeBase.h"
 #include "Fade/ModeFadeIn.h"
 #include "Fade/ModeFadeOut.h"
@@ -18,15 +21,15 @@ namespace {
 
 namespace AppFrame {
   namespace Mode {
-    ModeServer::ModeServer(Application::ApplicationBase& app) {
+    ModeServer::ModeServer(Application::ApplicationBase& app) : _app(app) {
       // データベースの初期化
       _modeRegistry.clear();
       // リストの初期化
       _modeList.clear();
       // フェードインの登録
-      AddMode(FadeIn, std::make_shared<Fade::ModeFadeIn>(app));
+      AddMode(FadeIn, std::make_shared<Fade::ModeFadeIn>(_app));
       // フェードアウトの登録
-      AddMode(FadeOut, std::make_shared<Fade::ModeFadeOut>(app));
+      AddMode(FadeOut, std::make_shared<Fade::ModeFadeOut>(_app));
     }
 
     ModeServer::~ModeServer() {
@@ -45,6 +48,14 @@ namespace AppFrame {
     }
 
     void ModeServer::Process() {
+      // キーボードの入力処理の取得
+      auto&& keyboard = _app.GetInputManager().GetKeyboard();
+      // Escapeキーが押されている場合中断
+      if (keyboard.GetKey(KEY_INPUT_ESCAPE, AppFrame::Input::InputPress)) {
+        // アプリケーションの終了要請
+        _app.RequestTerminate();
+        return;
+      }
       // リストが空の場合中断
       if (_modeList.empty()) {
         return;  // 未登録

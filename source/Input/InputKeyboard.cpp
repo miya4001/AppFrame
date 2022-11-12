@@ -16,7 +16,7 @@ namespace AppFrame {
 
     bool InputKeyboard::Init() {
       // “ü—Íî•ñ‚Ìİ’è
-      _press.fill(false);
+      _press.fill(0);
       _trigger = _press;
       return true;
     }
@@ -36,6 +36,8 @@ namespace AppFrame {
         key = keyboard[num];
         // ƒgƒŠƒKî•ñ‚ÌXV
         _trigger[num] = _press[num] ^ old[num] & _press[num];
+        // ”Ô†‚ğ‘‚â‚·
+        ++num;
       }
     }
 

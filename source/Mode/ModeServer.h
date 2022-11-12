@@ -100,6 +100,8 @@ namespace AppFrame {
        */
       std::shared_ptr<ModeBase> FetchMode(const std::string_view key, const bool enter = true);
 
+      //!< アプリケーションの参照
+      Application::ApplicationBase& _app;
       //!< モードデータベース(登録用)
       std::unordered_map<std::string, std::shared_ptr<ModeBase>> _modeRegistry;
       //!< モードリスト(処理用)
