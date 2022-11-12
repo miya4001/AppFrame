@@ -167,6 +167,8 @@
     <ClCompile Include="source\Effect\EffectLoadServer.cpp" />
     <ClCompile Include="source\Graphic\DivGraphData.cpp" />
     <ClCompile Include="source\Graphic\GraphicLoadServer.cpp" />
+    <ClCompile Include="source\Input\InputBase.cpp" />
+    <ClCompile Include="source\Input\InputKeyboard.cpp" />
     <ClCompile Include="source\Input\InputManager.cpp" />
     <ClCompile Include="source\Input\InputXJoypad.cpp" />
     <ClCompile Include="source\Math\Matrix44.cpp" />
@@ -189,6 +191,8 @@
     <ClInclude Include="source\Effect\EffectLoadServer.h" />
     <ClInclude Include="source\Graphic\DivGraphData.h" />
     <ClInclude Include="source\Graphic\GraphicLoadServer.h" />
+    <ClInclude Include="source\Input\InputBase.h" />
+    <ClInclude Include="source\Input\InputKeyboard.h" />
     <ClInclude Include="source\Input\InputManager.h" />
     <ClInclude Include="source\Input\InputXJoypad.h" />
     <ClInclude Include="source\Math\Matrix44.h" />

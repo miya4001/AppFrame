@@ -6,37 +6,36 @@
  * @date   April 2022
  *********************************************************************/
 #include "InputXJoypad.h"
-#include <DxLib.h>
 #include <algorithm>
 #include "../Math/Utility.h"
 
 namespace {
   constexpr int DeadZoneMin = 3000;    //!< デッドゾーン下限絶対値
   constexpr int DeadZoneMax = 30000;   //!< デッドゾーン上限絶対値
-  constexpr int Error = -1;            //!< エラー
   constexpr int ButtonNumberMin = 0;   //!< ボタン番号下限
   constexpr int ButtonNumberMax = 15;  //!< ボタン番号上限
-
 } // namespace
 
 namespace AppFrame {
   namespace Input {
     InputXJoypad::InputXJoypad() {
+      Init();
+    }
+
+    bool InputXJoypad::Init() {
+      // 入力情報の設定
       _press = XINPUT_STATE();
       _triggerButtons.fill(false);
       // デッドゾーン設定
       _deadZone = std::make_pair(DeadZoneMin, DeadZoneMax);
-    }
-
-    InputXJoypad::~InputXJoypad() {
-
+      return true;
     }
 
     void InputXJoypad::Process() {
       // 前フレームのボタン入力情報
       auto old = _press;
       // 入力状態の取得に失敗した場合エラー
-      if (GetJoypadXInputState(DX_INPUT_PAD1, &_press) == Error) {
+      if (GetJoypadXInputState(DX_INPUT_PAD1, &_press) == InputError) {
         return;  // 取得失敗
       }
       // アナログスティックの更新

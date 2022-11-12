@@ -6,8 +6,7 @@
  * @date   April 2022
  *********************************************************************/
 #pragma once
-#include <DxLib.h>
-#include <array>
+#include "InputBase.h"
 
 /**
  * @brief  アプリケーションフレーム
@@ -17,29 +16,29 @@ namespace AppFrame {
    * @brief  入力
    */
   namespace Input {
-    constexpr int ButtonNum = 16;         //!< ボタン総数
-    constexpr bool InputPress = true;     //!< 押下情報
-    constexpr bool InputTrigger = false;  //!< トリガ情報
-    constexpr bool StickLeft = true;      //!< 左スティック
-    constexpr bool StickRight = false;    //!< 右スティック
+    constexpr int ButtonNum = 16;       //!< ボタン総数
+    constexpr bool StickLeft = true;    //!< 左スティック
+    constexpr bool StickRight = false;  //!< 右スティック
     /**
      * @class  InputXJoypad
      * @brief  XInputジョイパッドの入力処理クラス
      */
-    class InputXJoypad {
+    class InputXJoypad : public InputBase {
     public:
       /**
        * @brief  コンストラクタ
        */
       InputXJoypad();
       /**
-       * @brief  デストラクタ
+       * @brief  初期化
+       * @return true:初期化成功
+       *         false:初期化失敗
        */
-      ~InputXJoypad();
+      bool Init() override;
       /**
        * @brief  更新
        */
-      void Process();
+      void Process() override;
       /**
        * @brief  ボタンの入力状態の取得
        * @param  key 対応するキー番号(0～15)
