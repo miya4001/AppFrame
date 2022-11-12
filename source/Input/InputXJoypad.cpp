@@ -12,8 +12,6 @@
 namespace {
   constexpr int DeadZoneMin = 3000;    //!< デッドゾーン下限絶対値
   constexpr int DeadZoneMax = 30000;   //!< デッドゾーン上限絶対値
-  constexpr int ButtonNumberMin = 0;   //!< ボタン番号下限
-  constexpr int ButtonNumberMax = 15;  //!< ボタン番号上限
 } // namespace
 
 namespace AppFrame {
@@ -25,7 +23,7 @@ namespace AppFrame {
     bool InputXJoypad::Init() {
       // 入力情報の設定
       _press = XINPUT_STATE();
-      _triggerButtons.fill(false);
+      _trigger.fill(false);
       // デッドゾーン設定
       _deadZone = std::make_pair(DeadZoneMin, DeadZoneMax);
       return true;
@@ -41,7 +39,7 @@ namespace AppFrame {
       // アナログスティックの更新
       AnalogStickUpdate();
       // ボタンのトリガ情報の更新
-      for (auto no = 0; auto && button : _triggerButtons) {
+      for (auto no = 0; auto && button : _trigger) {
         // 入力状態を比較してトリガ情報を算出
         button = Trigger(_press.Buttons[no], old.Buttons[no]);
         no++;
@@ -50,7 +48,7 @@ namespace AppFrame {
 
     bool InputXJoypad::GetButton(const int key, const bool type) const {
       // 範囲内判定
-      bool isRange = AppFrame::Math::Utility::IsRange(key, ButtonNumberMin, ButtonNumberMax);
+      bool isRange = AppFrame::Math::Utility::IsRange(key, 0, AllButtonNumber - 1);
       // 範囲内に収まっていない場合
       if (!isRange) {
         return false;  // キーが不正
@@ -61,7 +59,7 @@ namespace AppFrame {
         return _press.Buttons[key];
       } else {
         // トリガ情報を返す
-        return _triggerButtons[key];
+        return _trigger[key];
       }
     }
 

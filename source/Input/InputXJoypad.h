@@ -16,9 +16,9 @@ namespace AppFrame {
    * @brief  入力
    */
   namespace Input {
-    constexpr int ButtonNum = 16;       //!< ボタン総数
-    constexpr bool StickLeft = true;    //!< 左スティック
-    constexpr bool StickRight = false;  //!< 右スティック
+    constexpr int AllButtonNumber = 16;  //!< ボタン総数
+    constexpr bool StickLeft = true;     //!< 左スティック
+    constexpr bool StickRight = false;   //!< 右スティック
     /**
      * @class  InputXJoypad
      * @brief  XInputジョイパッドの入力処理クラス
@@ -102,8 +102,8 @@ namespace AppFrame {
 
       //!< 入力情報(押下入力)
       XINPUT_STATE _press;
-      //!< 各種ボタンの押下情報
-      std::array<bool, ButtonNum> _triggerButtons;
+      //!< 各種ボタンのトリガ情報
+      std::array<bool, AllButtonNumber> _trigger;
       //!< 各種スティックのデッドゾーン情報
       std::pair<short, short> _deadZone;
     };
